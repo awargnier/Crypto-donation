@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Donation DApp</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Donation DApp</h1>
+  <div>
+    <input type="number" id="donationAmount" placeholder="Montant de la donation en ETH" />
+    <button onclick="App.createDonation()">Faire un don</button>
+  </div>
+  <div>
+    <h2>Mes Donations</h2>
+    <div id="loader" class="loader"></div>
+    <ul id="donationList" class="list-group"></ul>
+    <template id="donationTemplate">
+      <li class="list-group-item">
+        <span class="id">{{id}}</span>
+        <span class="amount">{{amount}} ETH</span>
+        <span class="timestamp">{{timestamp}}</span>
+      </li>
+    </template>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="vendor/truffle-contract/dist/truffle-contract.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
